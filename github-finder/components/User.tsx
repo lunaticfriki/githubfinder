@@ -11,7 +11,7 @@ interface Props {
 
 export default function User({ username }: Props) {
   const [errorMessage, setErrorMessage] = useState('')
-  const { data, error } = useSwr<Data, Boolean>(
+  const { data, error, isValidating } = useSwr<Data, Boolean>(
     username && `/api/user?username=${username}`,
     fetcher
   )
@@ -23,6 +23,9 @@ export default function User({ username }: Props) {
       setErrorMessage('')
     }
   }, [error])
+
+  if (isValidating)
+    return <p className="m-4 flex items-center justify-center">Loading...</p>
 
   if (data?.user === undefined && !errorMessage)
     return (
@@ -36,8 +39,13 @@ export default function User({ username }: Props) {
 
   return (
     <div data-testid="user-component">
-      {errorMessage ? (
-        <p className="m-4 flex items-center justify-center">{errorMessage}</p>
+      {errorMessage && !isValidating ? (
+        <p
+          className="m-4 flex items-center justify-center"
+          data-testid="error-message"
+        >
+          {errorMessage}
+        </p>
       ) : (
         <Card user={data?.user} />
       )}

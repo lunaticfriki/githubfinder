@@ -9,8 +9,11 @@ interface Props {
 
 const Card = ({ user }: Props) => {
   return (
-    <article className="p-4 flex flex-wrap flex-col items-center">
-      <p>@{user?.username}</p>
+    <article
+      className="p-4 flex flex-wrap flex-col items-center"
+      data-testid="card-component"
+    >
+      <p data-testid="username">@{user?.username}</p>
       <img
         src={user?.avatarUrl}
         alt={user?.name}
