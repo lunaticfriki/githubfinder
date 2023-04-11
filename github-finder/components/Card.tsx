@@ -1,6 +1,6 @@
-import { FaCodeBranch, FaStar } from 'react-icons/fa'
 import { Repo as RepoType, User } from './types'
 
+import Image from 'next/image'
 import Repo from './Repo'
 
 interface Props {
@@ -14,11 +14,14 @@ const Card = ({ user }: Props) => {
       data-testid="card-component"
     >
       <p data-testid="username">@{user?.username}</p>
-      <img
-        src={user?.avatarUrl}
-        alt={user?.name}
+      <Image
+        src={user?.avatarUrl ? user.avatarUrl : ''}
+        alt={user?.name ? user.name : ''}
         className="rounded-full my-4 w-3/12"
+        width={200}
+        height={200}
       />
+
       <section className="mx-auto my-4 flex flex-wrap flex-col justify-center">
         <h2 className="my-2 uppercase text-white text-4xl">{user?.name}</h2>
         <p className="mb-6 italic">{user?.bio}</p>
