@@ -16,8 +16,8 @@ module.exports = {
         layout: 'auto 1fr 5rem',
       },
       colors: {
-        primary: '#db2777',
-        secondary: '#C33CDE',
+        primary: '#C33CDE',
+        secondary: '#db2777',
         background: '#19161C',
         white: '#94a3b8',
       },

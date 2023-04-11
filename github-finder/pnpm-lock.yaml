@@ -12,6 +12,7 @@ specifiers:
   '@vitest/coverage-c8': ^0.30.1
   '@vitest/ui': ^0.30.1
   autoprefixer: 10.4.14
+  dom: link:@types/testing-library/dom
   eslint: 8.37.0
   eslint-config-next: 13.3.0
   graphql: ^16.6.0
@@ -54,6 +55,7 @@ devDependencies:
   '@vitejs/plugin-react': 3.1.0
   '@vitest/coverage-c8': 0.30.1_vitest@0.30.1
   '@vitest/ui': 0.30.1
+  dom: link:@types/testing-library/dom
   jest-dom: link:@types/testing-library/jest-dom
   jsdom: 21.1.1
   vitest: 0.30.1_6kqxyppp63ueahn2lmwmvatjp4

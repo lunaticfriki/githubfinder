@@ -1,24 +1,31 @@
 import { render, screen, waitFor } from '@testing-library/react'
 
 import User from '../User'
-import { vi } from 'vitest'
 
 describe('User component', () => {
-  it('should render component', async () => {
-    render(<User username="lunaticfriki" />)
-    const component = await screen.findByTestId('user-component')
-    expect(component).toBeInTheDocument()
-  })
+  const props = {
+    error: false,
+    isValidating: false,
+    data: {
+      user: {
+        id: '',
+        avatarUrl: '',
+        bio: '',
+        name: '',
+        username: '',
+        followers: { totalCount: 2 },
+        following: { totalCount: 2 },
+        repositories: {
+          totalCount: 1,
+          nodes: [{ url: '', name: '', stargazerCount: 1, forkCount: 1 }],
+        },
+      },
+    },
+  }
 
-  it('should display a message without a user', async () => {
-    render(<User username="" />)
-    const message = await screen.findByTestId('no-user-message')
-    expect(message).toBeInTheDocument()
-  })
-
-  it('should display an error message if there is no user found', async () => {
-    render(<User username="getify1" />)
-    const errorMessage = await screen.findByTestId('error-message')
-    expect(errorMessage).toBeInTheDocument()
-  })
+  it('should display the user', async () => {
+    render(<User {...props} />)
+    const card = await screen.findByTestId('card-component')
+    await waitFor(() => expect(card).toBeInTheDocument())
+  }, 5000)
 })
