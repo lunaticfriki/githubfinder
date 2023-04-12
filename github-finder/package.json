@@ -9,7 +9,8 @@
     "lint": "next lint",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "@types/node": "18.15.11",
@@ -37,6 +38,7 @@
     "@vitejs/plugin-react": "^3.1.0",
     "@vitest/coverage-c8": "^0.30.1",
     "@vitest/ui": "^0.30.1",
+    "cypress": "^12.9.0",
     "dom": "link:@types/testing-library/dom",
     "jest-dom": "link:@types/testing-library/jest-dom",
     "jsdom": "^21.1.1",

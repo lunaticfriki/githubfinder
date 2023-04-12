@@ -9,7 +9,7 @@ const Repo = ({ repo }: Props) => {
   return (
     <div className="w-full border border-primary my-2 p-4 rounded flex flex-col justify-center items-center md:min-w-[700px]">
       <p className="text-2xl">{repo.name}</p>
-      <a href={repo.url} target="_blank">
+      <a href={repo.url} target="_blank" data-testid="repo-url">
         {repo.url}
       </a>
       <section className="py-2 flex justify-center items-center">

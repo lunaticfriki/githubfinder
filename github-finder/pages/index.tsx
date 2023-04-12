@@ -25,7 +25,6 @@ export default function Home() {
       setErrorMessage('')
     }
   }, [error])
-
   return (
     <Layout>
       <Search setUsername={setUsername} />
