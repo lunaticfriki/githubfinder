@@ -51,3 +51,6 @@ yarn test:ui
 # or
 pnpm test:ui
 ```
+
+You can view the app in production here:
+<https://githubfinder-murex.vercel.app/>
